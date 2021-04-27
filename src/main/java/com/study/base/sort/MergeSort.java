@@ -13,6 +13,30 @@ public class MergeSort {
         Merge(nums, l, mid, r);
     }
 
+    public void Sort(int[] nums){
+        if(nums == null || nums.length < 2){
+            return;
+        }
+
+        int mergeSize = 1;
+        int N = nums.length;
+        while (mergeSize < N){
+            int l = 0;
+            while (l < N){
+                int mid = l + mergeSize - 1;
+                if(mid > N)
+                    break;
+                int r = Math.min( mid + mergeSize, N - 1);
+                Merge(nums, l, mid, r);
+                l = r + 1;
+            }
+            if(mergeSize > N / 2)
+                break;
+            mergeSize = mergeSize << 1;
+        }
+
+    }
+
     public void Merge(int[] nums, int L, int MID, int R){
         int[] helper = new int[L + R+1];
         int i = 0;
@@ -33,7 +57,8 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int[] nums = {8,7,5,6,4,1,2,3};
-        new MergeSort().Sort(nums, 0, nums.length-1);
+//        new MergeSort().Sort(nums, 0, nums.length-1);
+        new MergeSort().Sort(nums);
         Arrays.stream(nums).forEach(System.out::println);
     }
 }
