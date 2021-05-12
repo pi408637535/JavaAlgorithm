@@ -55,6 +55,10 @@ public class MergeSort {
         }
     }
 
+    //Todo mergeSort非递归版
+    //算法基础3，在看是已经能理解很多
+
+
     public static void main(String[] args) {
         int[] nums = {8,7,5,6,4,1,2,3};
 //        new MergeSort().Sort(nums, 0, nums.length-1);
