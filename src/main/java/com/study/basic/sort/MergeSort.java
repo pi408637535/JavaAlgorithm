@@ -1,4 +1,4 @@
-package com.study.base.sort;
+package com.study.basic.sort;
 
 import java.util.Arrays;
 
