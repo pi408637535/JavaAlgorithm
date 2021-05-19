@@ -78,7 +78,7 @@ public class Code01_TrieTree {
             if(result > 0){
                 char[] chars = str.toCharArray();
                 Node cur = root;
-                cur.pass--;
+                cur.pass--; //减去初始节点-> cur[ele]节点
                 for(int i = 0; i < chars.length; i++) {
                     cur = cur.next[chars[i] - 'a'];
                     if(cur.pass == 0){ //优化
