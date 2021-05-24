@@ -8,10 +8,11 @@ public class Problem_0142_LinkedListCycleII {
         ListNode fast = head;
         ListNode slow = head;
 
+
         if(fast.next == null || fast.next.next == null){
             return null;
         }
-
+        //fast = fast.next.next 错误的，提前走了两步
         while (fast != null && fast.next != null && fast.next.next != null ){
             fast = fast.next.next;
             slow = slow.next;
